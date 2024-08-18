@@ -1,0 +1,42 @@
+== vs === in js
+
+1. == performs type coercion meaning it converts type of variables being compard
+   being actual comparison. Not very strict . slower . Prone to give unexpected results.
+2.  === (Strict equality) does not perform any such type coercion . strict . faster .
+    Not as unpredictable as ==.
+
+Rules for coercion/comparison
+1. boolean operators converted to number (true is 1, false is 0) when being compared with non-boolean values.
+2. null == undefined is true but null === undefined is false. Both these values are not equal to anything .
+3. Objects (including arrays,functions) are compared using there reference not values , both for == and ===.
+4. NaN is not equal to anything including itself.
+5. string is converted to number when string and number are compared.
+6. object is converted to primitive using toString or valueOf when object and primitive are compared.
+7. null is coerced to 0 in when involved with mathematical operators
+8. undefind is coerced to NaN when involved with mathematical operators
+9. comparisons involving NaN and undefined are always false.
+
+Falsy Values
+These are values that are considered false when evaluated in a boolean context:
+
+false
+0 (zero)
+-0 (negative zero)
+0n (BigInt zero)
+"" (empty string)
+null
+undefined
+NaN
+
+
+Truthy Values
+All values that are not falsy are considered truthy. This includes:
+
+true
+Any non-zero number (e.g., 42, -42, 3.14)
+Any non-empty string (e.g., "0", "false")
+Arrays (e.g., [])
+Objects (e.g., {})
+Functions
+Dates (e.g., new Date())
+Any BigInt value other than 0n
