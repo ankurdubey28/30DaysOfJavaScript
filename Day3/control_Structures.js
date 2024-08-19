@@ -1,4 +1,4 @@
-
+// if-else
 function checkNum(num){
     if(num>0) return "Positive number";
     else if(num<0) return "Negative number"
@@ -7,14 +7,14 @@ function checkNum(num){
 
 console.log(checkNum(-2))
 
-
+// Ternary Operator
 function checkVotingAge(age){
     return age>=18?"yes":"NO";
 }
 
 console.log(checkVotingAge(18))
 
-
+// switch case
 function checkWeek(day1) {
     let day = day1.toUpperCase();
     switch (day) {
@@ -46,6 +46,7 @@ function checkWeek(day1) {
 
 checkWeek("monday");
 
+// Nested switch case
 function checkLeapYear(year){
     if(year%4===0) return true;
     else {
