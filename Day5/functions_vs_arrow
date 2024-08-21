@@ -1,0 +1,19 @@
+// Normal functions : function name(parameters){code}
+
+// Arrow functions : const name=(parameters)=>{code}
+
+
+// 1. This binding -
+// Normal functions make their own this context.
+// Arrow functions do not have their own this context. Instead, they inherit
+//  this from the surrounding non-arrow function or global context.
+//  bind keyword bind the this context of functions.
+// Arrow function cannot be used as object methods and constructors because of this reason.
+
+
+// 2. Return
+// Normal functions need to have explicit return keyword to return any value/values.
+// Arrow functions have implicit return -
+// ()=>code this is implicit return
+// ()=>{return code} here return keyword needs to be used for returning values
+// ()=>({}) this is how a object returned from arrow functions.
