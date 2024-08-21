@@ -7,7 +7,7 @@
 // Normal functions make their own this context.
 // Arrow functions do not have their own this context. Instead, they inherit
 //  this from the surrounding non-arrow function or global context.
-//  bind keyword bind the this context of functions.
+//  bind,call,apply keywords bind the this context of functions. (study about them)
 // Arrow function cannot be used as object methods and constructors because of this reason.
 
 
