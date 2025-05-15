@@ -23,3 +23,9 @@ const:
 2. no resassignment
 3. variable initlization at time of declaration mandatory
 4. variable binding is mutable.
+
+Note:
+1. using none of these identifiers for variable delcaration created a implicit global variable
+   int non strict mode, which means does not matter in what scope is the variable defined as per
+   programmer , variable will leak into global scope.
+2. In strict mode , this gives an error.
