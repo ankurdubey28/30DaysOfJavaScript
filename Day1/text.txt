@@ -1,0 +1,25 @@
+var :
+1. var enables global scoped and function/local scoped variables.
+  1.1 thus global variables are available inside functions scope as well while obviously this
+      is not true for function scoped variables, they cannot be access outside , throws error.
+2. var variables can be re-declared and updated without any issues/errors.
+3. var variables are hoisted on top of their scope and intialzed with undefined. This is done 
+   during execution.
+4. var variables allow shadowing only with function blocks , not with block scopes.
+
+
+let:
+1. let variables are block scoped. ({} --> this defines a block).
+2. let variables can be updated within its scope but cannot be re-declared.
+3. let variables declaration on global level (on top of file) does indeed make it global
+   but does not add it to the global object ( window in browser). while var allows this.
+4. let variables are also hoisted on top of their scope but not initalized with undefined,
+   rather they are uninitialized which helps give reference error and solve issue with var
+   declared variables.
+5. Also variable shadowing is normally supported here.
+
+const:
+1. very similar to let in most properties except-:
+2. no resassignment
+3. variable initlization at time of declaration mandatory
+4. variable binding is mutable.
