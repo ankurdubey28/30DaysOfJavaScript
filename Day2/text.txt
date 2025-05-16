@@ -1,9 +1,12 @@
 == vs === in js
 
-1. == performs type coercion meaning it converts type of variables being compard
-   being actual comparison. Not very strict . slower . Prone to give unexpected results.
+1. == performs type coercion meaning it converts type of variables being actually compared. 
+   Not very strict . slower . Prone to give unexpected results.
 2.  === (Strict equality) does not perform any such type coercion . strict . faster .
     Not as unpredictable as ==.
+3. Object.is(val1,val2) is another equality comparator with main of comparing sameness, return 
+   true if val1 and val2 have same values otherwise false. 
+   Example ->  Object.is(NaN,NaN)=true and Object.is(+0,-0)=false (+0===-0 and +0==-0 are both true).
 
 Rules for coercion/comparison
 1. boolean operators converted to number (true is 1, false is 0) when being compared with non-boolean values.
