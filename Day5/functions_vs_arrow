@@ -7,7 +7,7 @@ Arrow functions : const name=(parameters)=>{code}
  Normal functions make their own this context.
  Arrow functions do not have their own this context. Instead, they inherit
  this from the surrounding non-arrow function or global context.
- bind,call,apply keywords bind the this context of functions. (study about them)
+ bind,call,apply keywords bind the this context of functions but they DO NOT WORK with arrow functions.
  Arrow function cannot be used as object methods and constructors because of this reason.
 
 
@@ -19,9 +19,19 @@ Arrow functions : const name=(parameters)=>{code}
  ()=>({}) this is how a object returned from arrow functions.
 
 3.arguments and yield:
-  Arrow functions do not have access to arguments object, which normal functions have,
-  reasong being same that they are light weight and do not bind their arguments and this.
+ 3.1 Arrow functions do not have access to arguments object, which normal functions have,
+     reasong being same that they are light weight and do not bind their arguments and inherit
+     if from outer scope.
+ 3.2 Arrow functions call also not be used as generator functions cause they cannot use yield
+     inside their body, they do not have their own context which are mandatory for working of
+     generator functions.
+4. Prototype
+   Arrow functions do not have prototype property and do not implement [[construct]] internal
+   method which are mandatory for function to act as constructor and thus now work with new keyword.
 
-4. JS just like java is strictly pass by value.
+5. JS just like java is strictly pass by value.
   - which means primitives get their values copied when passed.
   - and non primitives the value of reference in copied when passed.
+
+Note:
+1. => operator has almost lowest precedence among all operators.
