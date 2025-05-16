@@ -38,4 +38,5 @@ Wrapper types:
 
 Note:
 1. Functions are also objects only , with additional capability of being callable.
+2. Objects are seen as collections of properties.
 
