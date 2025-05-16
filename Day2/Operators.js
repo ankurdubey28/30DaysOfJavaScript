@@ -36,4 +36,18 @@ console.log(name==="ankur" || age===30)
 let bool=true
 console.log(!bool)
 
+// spread and rest operators: (...)
+// 1.spread 
+const numbers = [1, 2, 3];
+const moreNumbers = [...numbers, 4, 5];
+console.log(moreNumbers); // [1, 2, 3, 4, 5]
+
+// 2.rest
+const [first, ...rest] = [10, 20, 30, 40];
+console.log(first); // 10
+console.log(rest);  // [20, 30, 40]
+
+
+
+
 
