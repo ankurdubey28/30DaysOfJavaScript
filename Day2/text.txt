@@ -44,12 +44,40 @@ Functions
 Dates (e.g., new Date())
 Any BigInt value other than 0n
 
-Optional Chaining Operator: (?.)
+A. Optional Chaining Operator: (?.)
 The optional chaining (?.) operator accesses an object's property or calls a function. 
 If the object accessed or function called using this operator is undefined or null, the 
 expression short circuits and evaluates to undefined instead of throwing an error.
 
-Nullish caolescing operator:(??)
+B. Nullish coalescing operator:(??)
 The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
 Its main job can be understood as giving fallback value to the variable in case main value is
 null or undefined only. It is special case of Logical or operator (||).
+
+C. Spread  operator:
+1. spread only works with iterable values like array and string.
+2. spreading an object , js copies only own enumerable properties (Properties that are directly on the object and not hidden from loops).
+ eg-:    const array = [1, 2, 3];
+         const obj = { ...array }; // { 0: 1, 1: 2, 2: 3 }
+
+         const obj = { ...true, ..."test", ...10 };
+         console.log(obj); // { '0': 't', '1': 'e', '2': 's', '3': 't' }
+4. When it comes to copying things with spread operator, it goes only one level deep which means
+   only shallow copy is made.
+5. Property overriding - when multiple properties with same key are found while spreading, the 
+   latest value is assigned.
+6. spread operator is used to conditionally add properties specially in ReactJS.
+
+D. Rest operator:
+1. rest operater creates a an entire newly allocated array of condensed values.
+2. since rest operator creates a new array only , all array methoda are applicable here
+   which is not he case with arguments which is an object type with limited methods with it.
+
+
+
+
+
+
+
+
+
