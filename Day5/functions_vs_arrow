@@ -18,6 +18,10 @@ Arrow functions : const name=(parameters)=>{code}
  ()=>{return code} here return keyword needs to be used for returning values
  ()=>({}) this is how a object returned from arrow functions.
 
-3. JS just like java is strictly pass by value.
+3.arguments and yield:
+  Arrow functions do not have access to arguments object, which normal functions have,
+  reasong being same that they are light weight and do not bind their arguments and this.
+
+4. JS just like java is strictly pass by value.
   - which means primitives get their values copied when passed.
   - and non primitives the value of reference in copied when passed.
