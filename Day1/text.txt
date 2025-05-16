@@ -24,8 +24,18 @@ const:
 3. variable initlization at time of declaration mandatory
 4. variable binding is mutable.
 
-Note:
+No Variable declaration keyword:
 1. using none of these identifiers for variable delcaration created a implicit global variable
    int non strict mode, which means does not matter in what scope is the variable defined as per
    programmer , variable will leak into global scope.
 2. In strict mode , this gives an error.
+
+Wrapper types:
+1. All primitive types have corresponding wrapper types except null and undefined, which provides
+   useful methods to work with primitives.
+2. JS automatically does autoboxing and it is advisable to use primitive types only , not use 
+   wrapper types directly.
+
+Note:
+1. Functions are also objects only , with additional capability of being callable.
+
