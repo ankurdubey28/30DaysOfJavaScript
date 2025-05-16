@@ -56,13 +56,24 @@ console.log(maxi(5,6));
 // arguments: 
 // arguments is an array-like object accessible inside functions that contains the values of the arguments passed to that function.
 // it is iterable and supports methods like length, and typeof operator returns object for arguments as input
-
 function f(a,b,c){
   console.log(arguments)
   console.log(arguments.length)
 }
-
 f(1,2,3)
+
+
+// This inheritance from surrounding context.
+const person = {
+  name: "Alice",
+  greet: function () {
+    setTimeout(() => {
+      console.log(`Hi, I’m ${this.name}`);  
+    }, 1000);
+  }
+};
+
+person.greet(); // "Hi, I’m Alice"
 
 
 
