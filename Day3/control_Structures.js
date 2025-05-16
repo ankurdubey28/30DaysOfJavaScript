@@ -56,3 +56,13 @@ function checkLeapYear(year){
 }
 
 console.log(checkLeapYear(2000))
+
+// Tagged literals : advance case of template literals
+function tag(strings,...values){
+  console.log(strings);
+  console.log(values);
+}
+
+const user="ankur";
+const age=22;
+tag `${user} is ${age} years old`
