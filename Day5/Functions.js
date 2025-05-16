@@ -1,14 +1,19 @@
+// Funtion constructor 
+// this is a slower (runtime compilation) method and thus not be encouraged.
+const mul=new Function("x","y","return x*y");
+
 // Function Declaration
+// only this declaration does hoisting of function, others do not do.
 function Square(num){
     return num*num
 }
-console.log(Square(5))
+console.log(Square(5));
 
 // Arrow Functions
 const CheckForA=(str)=>{
-    return str.includes("A")
+    return str.includes("A");
 }
-console.log(CheckForA("Ankur"))
+console.log(CheckForA("Ankur"));
 
 
 
@@ -16,13 +21,13 @@ console.log(CheckForA("Ankur"))
 function product(a,b=1){
     return a*b
 }
-console.log(product(5,2))
+console.log(product(5,2));
 
 
 
 // Higher Order Functions
 function HigherOrder(val,func1,func2){
-    return func2(func1(val))
+    return func2(func1(val));
 }
 
 function func1(val){
@@ -32,7 +37,7 @@ function func1(val){
 function func2(val){
     return val*3
 }
-console.log(HigherOrder(2,func1,func2))
+console.log(HigherOrder(2,func1,func2));
 
 
 // Function Expression
