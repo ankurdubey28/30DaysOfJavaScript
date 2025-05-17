@@ -1,1 +1,13 @@
-
+JS Arrays:
+1. All standard built in copy operations of any type create shallow copy with respect to arrays.
+2. Array indices can be quoted as well like arr['0']=1, though not necessary.
+3. Increasing array lenght adds empty slots without creating any new elements , not even undefined.(log the result).
+4. since arrays in js are objects only, internally they are treated as objects with enumerable property being treated as keys while values being treated as values (obviously). Use Object.* methods on array to find out.
+5.Following methods mutate or return new array post changes.
+🔁 Mutates:	push : pop, splice, sort, reverse, shift, unshift
+🧼 Non-mutating	: concat, slice, map, filter, flat, toSorted, toReversed, toSpliced, with
+6.Many methods like map, filer, reduce take 2 arguments, first a callback while second is "thisArgs", which is optional use to set this context inside the working of callback given, if not
+given then it is undefined.
+7.Array like objects: objects which have length,index properties but do not inherit from Array.prototype:
+ 7.1 Like arguments, DOM nodelist, HTMLCollections
+ 7.2 to deal with them simply convert them to array type using spread operator, or Array.from()
