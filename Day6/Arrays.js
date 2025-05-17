@@ -1,5 +1,10 @@
 // Array creation
+
+// 1.Array literal notation
 const arr=[1,2,3,4,5]
+// 2.Array constructor
+const arr=new Array(1,2,3)
+// 3.Factory methods
 console.log(Array.from("hello, world"))
 console.log(Array.of('a','b','c'))
 
@@ -49,8 +54,6 @@ console.log(mat.flat(2))
 console.log(Array.isArray(arr))
 console.log(arr.concat([55,66,77,88,99]))
 console.log(arr.sort()) //can also take in a comparator function for custom comaprison
-const[a,b,...c]=arr
-console.log(a,b,c)
 const newArr=[...arr,100]
 console.log(newArr)
 
@@ -65,6 +68,19 @@ let months=["January","February","Monday","Tuesday"]
 let days=months.splice(2,2,"March","April")
 console.log(days)
 console.log(months)
+
+//every: test all elemts for a condition, short circuit the moment first false is found
+[].every(x=>x>0);// true
+
+//some: does atleast one element satisfy a condition
+[1,2,5].some(x=>x%2===0) //false
+
+//reduceRight: exactly same as reduce just the order of processing of elements is from last element
+// towards first element i.e from right to left.
+const arr = ["a", "b", "c", "d"];
+const result = arr.reduceRight((acc, curr) => acc + curr);
+console.log(result); // "dcba"
+
 
 
 
