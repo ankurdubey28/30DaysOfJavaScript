@@ -69,4 +69,16 @@ funciton addElementToArray(arr,element){
 }
 addElementToArray(arr,element)
 
+//HOF(higher order functions): try to understand this, it is a good pattern to demonstrate HOF
+// and to use in general programming as well.
+const asyncHandler = (fn) => 
+  async (req, res, next) => {
+    try {
+      await fn(req, res, next);
+    } catch (error) {
+      // handle error (usually: next(error))
+    }
+  }
+
+
 
