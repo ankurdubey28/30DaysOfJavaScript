@@ -1,0 +1,20 @@
+closures:
+1. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+  In other words, a closure gives a function access to its outer scope. In JavaScript, closures are created every time a function is created, at 
+  function creation time.
+2. Lexical scoping enables closure in js. Lexical scoping uses notation where a variable is declared
+   wihtin source code to determine where that variable will be availabe.
+   Eg: function init() {
+        var name = "Mozilla"; // name is a local variable created by init
+        function displayName() {
+        // displayName() is the inner function, that forms a closure
+        console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+        }
+        init();
+3. Practical usage: (code them up)
+   used for caching results.
+   used for emulating private variables.
+   Module pattern implementation.
+
