@@ -23,4 +23,12 @@ Functional Programming
 
 1.Pure functions: those functions which have no side effects and always give same outputs given 
   the same inputs.
+2. Goal of pure function is to treat inputs as immutable, and not try to mutate them.
+3. Benefits:
+   3.1 improved and easy for unit testing.
+   3.2 dependent and predictable code.
+   3.3 easy to debug and find issues.
+   3.4 concurrency safe.
+4. Built in pure functions: Math.max(),Math.min(),etc
+   Built in impure functions: Math.random(),Date.now()
 
