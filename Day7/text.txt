@@ -1,0 +1,25 @@
+Dynamic and Computed keys
+
+1. Dynamic keys: some times the keys of a Js object are not know in advance or should be built ar
+   runtime, in such case dynamic keys help:
+   Eg: const key = "name";
+       const obj = {
+        [key]: "Alice"   // ← key is evaluated!
+       };
+      console.log(obj.name); // Alice
+
+2. Computed Properties: any key wrapper inside [] brackets inside an object literal.
+   It can be anything, variable, expression, function call etc.
+   Eg: const id = 42;
+       const obj = {
+      ["user_" + id]: "Alice"
+       };
+      console.log(obj.user_42); // Alice
+
+3. Some Points:
+  3.1 keys in js objects can only be of type string of symbol. Thus if any other type is taken
+      as key then type coercion takes place at time of dynamic key creation.
+  3.2 above coercion does not take place if and only if type of key chosen by default is symbol
+      which is a valid key type hence no coercion.
+
+
