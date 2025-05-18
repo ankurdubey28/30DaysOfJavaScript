@@ -18,3 +18,9 @@ closures:
    used for emulating private variables.
    Module pattern implementation.
 
+
+Functional Programming
+
+1.Pure functions: those functions which have no side effects and always give same outputs given 
+  the same inputs.
+
