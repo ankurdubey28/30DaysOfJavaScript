@@ -11,3 +11,10 @@ given then it is undefined.
 7.Array like objects: objects which have length,index properties but do not inherit from Array.prototype:
  7.1 Like arguments, DOM nodelist, HTMLCollections
  7.2 to deal with them simply convert them to array type using spread operator, or Array.from()
+
+slice vs splice
+1. splice() is mutable that it makes changes to given input array while slice() is immutable , it 
+   returns a new array.
+2. slice(startIndex,endIndex) and splice(startIndex,deleteCount,string[]?), this difference in 
+   method signature explains difference in their wokring.
+3. splice is only built in method which allows simultaneous and inplace deletion and addition of elements.
