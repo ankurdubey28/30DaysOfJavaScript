@@ -11,8 +11,6 @@ like this: ${string}.
 `;
 console.log(multilineString);
 
-
-
 // Destructuring
 const book={
     title:"atomic habits",
@@ -21,17 +19,14 @@ const book={
 const {title,author}=book
 console.log(title,author)
 
-
 const arr=[1,2,3,4,5,6,7,8,9]
 const [a,b,c]=arr
 console.log(a,b,c)
-
 
 // Spread and Rest operators
 //1. Spread
 const newArr=[...arr,10]
 newArr.forEach(i=>console.log(i))
-
 
 //2.Rest
 function sum(...args){
@@ -39,15 +34,12 @@ function sum(...args){
 }
 console.log(sum(1,2,3))
 
-
-
 //Default Parameters
 function pro(a,b=1){
     return a*b
 }
 console.log(pro(5))
 console.log(pro(5,4))
-
 
 // Enhanced Object Literal
 let key="Nationality"
@@ -61,5 +53,20 @@ const person={
 }
 person.getDetails()
 console.log(person["Nationality"])
+
+//Pure and Impure Functions
+// Impure function: Find reason why
+const arr=[1,2,3]
+function addElementToArray(element){
+    a.push(element)
+}
+addElementToArray(element)
+// Pure function: Find what changed now
+const arr=[1,2,3]
+funciton addElementToArray(arr,element){
+    // entirely new array is created and global arr is not disturbed.
+   return [...a,element]
+}
+addElementToArray(arr,element)
 
 
