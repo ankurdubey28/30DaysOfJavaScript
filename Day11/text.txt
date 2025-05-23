@@ -1,0 +1,54 @@
+Asynchronous JS:
+1. Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be 
+   able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that 
+   task has finished, your program is presented with the result.
+
+example synchronous code:    const name="ankur";
+                             const greeting=`hello my name is ${name}!`;
+                             console.log(greeting)
+2. Problem with Synchronous Programming: since JS is single threaded, long running synchronous piece of
+   code blocks the thread, thus while a long running synchronous code is in exectution during that time 
+   no other thing can be done.
+
+3. Asynchronous programming comes as solution to above stated issue, with help of various mechanisms
+   discussed ahead.
+
+
+Callbacks:
+1. callback is a function which is passed to other function with intention of being called later on.
+2. One of the main ways of implementing asynchronous functions in JS.
+3. Callback hell: callbacks nested inside other callback , the nesting is mutliple levels deep. This makes
+   code unmaintanable and readablility goes for toss (pyramid of doom).
+   Example: const cart=["shoes","shirt","pants","socks"]
+            api.createOrder(cart,function(){
+            api.payForOrder(function(){
+             appendFile.showOrderSummary(function(){
+               api.updateWallet()
+                       })
+                   })
+            })
+4. Inversion of control: the control of our function is no longer with us , rather the control is passed 
+   on the other piece of code which then will call the given callback, but how to trust whether our callback
+   will be correctly called? As a developer the control of code should be retained with programmer.
+
+Promises:
+1. Promises are the foundation of asynchronous programming in modern JavaScript. A promise is an object returned 
+   by an asynchronous function, which represents the current state of the operation. At the time the promise is 
+   returned to the caller, the operation often isn't finished, but the promise object provides methods to handle 
+   the eventual success or failure of the operation.
+
+
+
+
+
+NOTE:
+1. JS engine itself is single threaded.
+2. But JS runtime environment includes mutlit threaded capabilites like
+   Web apis
+   Event Loop 
+   Web Worker
+   Thread pools (in nodejs with libuv,fs module uses these)
+
+
+
+   
