@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Programming Languages</h4>
+<ul id="list">
+    <li>Python</li>
+    <li>Go</li>
+    <li>JavaScript</li>
+    <li>Java</li>
+    <li>TypeScript</li>
+</ul>
+
+<script>
+    const list=document.getElementById("list")
+    list.addEventListener("click",function(e){
+        if(e.target.tagName==="LI"){
+            console.log("clicked Item:",e.target.textContent)
+        }
+    })
+</script>
+
+</body>
+</html>

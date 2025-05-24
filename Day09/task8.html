@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programming Languages</title>
+  <style>
+    /* Style for the heading */
+    .rounded {
+      border: 2px solid #4CAF50;
+      border-radius: 12px;
+      padding: 10px;
+      width: fit-content;
+    }
+
+    .highlight {
+      color: white;
+      background-color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .shadow {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .large-text {
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h2 id="list">List of Programming Languages</h2>
+  <ul id="programming-languages">
+    <li><h4>Python</h4></li>
+    <li><h4>JavaScript</h4></li>
+    <li><h4>Java</h4></li>
+    <li><h4>C++</h4></li>
+    <li><h4>Go</h4></li>
+  </ul>
+</div>
+
+<script>
+  const listHeading = document.getElementById("list");
+
+  // Add multiple classes for styling
+  listHeading.classList.add("rounded", "highlight", "shadow", "large-text");
+
+  // Or modify styles directly:
+  // listHeading.style.color = "blue";
+  // listHeading.style.backgroundColor = "lightyellow";
+  // listHeading.style.fontSize = "30px";
+</script>
+</body>
+</html>

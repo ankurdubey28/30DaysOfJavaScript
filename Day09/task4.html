@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programming Languages</title>
+</head>
+<body>
+<div>
+    <h2>List of Programming Languages</h2>
+    <ul id="programming-languages">
+        <li><h4>Python</h4></li>
+        <li><h4>JavaScript</h4></li>
+        <li><h4>Java</h4></li>
+        <li><h4>C++</h4></li>
+        <li><h4>Go</h4></li>
+    </ul>
+</div>
+
+<script>
+    const uList=document.getElementById("programming-languages")
+    const newLi=document.createElement("li")
+    const heading=document.createElement("h4")
+    heading.textContent="Rust"
+    newLi.appendChild(heading)
+    uList.appendChild(newLi)
+</script>
+</body>
+</html>

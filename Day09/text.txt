@@ -1,0 +1,81 @@
+DOM(Document Object Model)
+1. Programming interface for web documents, if presents entire html document in a
+   tree like structure(in memory representation) so that it can be manipulated by scripting language(js)
+2. All properties, methods and events available for manipulating and creating web
+   pages are organized as objects.
+3. DOM is not built in to js by default but rather is web api i.e exposed by browsers
+   thus when js runs in browser it can access the api.
+4. Dom is language agnostic i.e it can very well be implemented in other languages like python,
+   though only JS is used widely.
+5. DOM tree does not ignore whitespaces but rather handles them in a different manner.
+
+DOM data types:
+1. Document: root object representing the html structure itself
+2. Node: every object within a document is a node of some kind like
+         textnode, attributenode etc.
+3. Element: every element is a node but vice versa is not true. Eg: <p>,<div>
+            Then other specific element types like HTMLDivElement,HTMLTableElement
+            extend this type.
+4. NodeList: array like object of elements which contains all nodes returned by selection.
+             it has indexes and can be accessed using list[0] or list.item(0) syntax.
+5. Attr: node which implements special interface Attr and represent attributes
+         like class, id etc.
+
+DOM interfaces:
+1. In the DOM (Document Object Model), an interface defines a set of properties and methods that objects can have.
+    JavaScript interacts with these interfaces when you manipulate web page elements.
+2. Example the nodetype HTMLTableElement implements multiple interfaces:
+    2.1 Node (.parentNode,.childNodes, .appendchild())
+    2.2 Element (.classList,.id,.innerHTML)
+    2.3 HTMLElement (.style,.title)
+    2.4 HTMLTableElement (.insertRow(), .deleteRow())
+
+
+DOM selectors
+1. getElementById('id'): returns single element with matching id.
+2. getElementByClassName("class"): returns HTMLCollection of elements with given class.
+3. getElementByTagName("div"): returns HTMLCollection of elements with given class.
+4. getElementsByName("name"): return a nodelist of elements with specified name attribute,
+                               common for input elements.<input name="email" />.
+5. querySelector("selector"): returns first matching element.Supports CSS selectors (e.g., .class, #id, div > p, [type="text"]).
+6. querySelectorAll("selector"): Returns a static NodeList of all matching elements. Supports all selectors as well.
+7. All these methods can be used again on the results obtained by usage of dom selectors.
+8. Traversal Based Selections: element.children
+                               element.childNodes
+                               element.parentElement
+                               element.firstElementChild
+                               element.lastElementChild
+                               element.nextElementSibling
+                               element.previousElementSibling
+9. Form specific methods: document.forms         // All <form> elements
+                          document.forms["loginForm"]   // Form with name="loginForm"
+                          form.elements          // All form fields
+                          form.elements["email"] // Specific input in a form
+10. Links: document.links
+
+NOTE
+1. TextNode- node representing the entire raw text content.
+             Does not care about visibility or css.
+2. innerText- property of an element.
+              returns the visible text within element.
+              excludes hidden elements and takes css styling into account.
+3. innerHTML- property of element.
+              allows getting/setting entire html content inside an element.
+              gives and takes dom elements in string format ("<div></div>"").
+4. Exhaustive list of methods: 1. createElement("tag") - Creates a new HTML element node.
+                               2. createTextNode("text") - Creates a text node.
+                               3. appendChild(node) - Appends a node as the last child.
+                               4. prepend(node) - Inserts a node as the first child.
+                               5. insertBefore(newNode, referenceNode) - Inserts before a specific child.
+                               6. removeChild(node) - Removes a child node.
+                               7. replaceChild(newNode, oldNode) - Replaces one child node with another.
+                               8. cloneNode(deep) - Clones the node. If deep = true, also clones children.
+                               9. setAttribute(attr, value) - Sets a new attribute or changes value.
+                               10. getAttribute(attr) - Gets the value of an attribute.
+                               11. removeAttribute(attr) - Removes the attribute.
+                               12. classList - Property used for class manipulation:
+                                   - .add("class"), .remove("class"), .toggle("class"), .contains("class")
+                               13. style - Accesses inline styles (element.style.color = "red")
+                               14. matches("selector") - Checks if element matches a CSS selector.
+                               15. closest("selector") - Finds the nearest ancestor (or self) that matches a selector.
+

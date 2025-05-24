@@ -1,0 +1,102 @@
+Events:
+1. Things which happen in our system, which system tells about so that a piece of
+   code can react to them.
+2. Example:
+   2.1 User click on button
+   2.2 web page loading finishes
+   2.3 form submission
+   2.4 error occurs
+   2.5 User key press on keyboard
+3. To react to an event , a event handler is attached. This is usually a block of
+   js code which runs when event fires. When such handler is defined , we say an event
+   handler is registered.
+4. Event listeners listens for an event and event handler is piece of code that
+   runs in response. These are strictly speaking different things but used interchangeably.
+5. Preferred way to add event handler is to use "addEventListener()".
+6. Event listeners can be removed using "removeEventListener()"
+7. Other methods to add event listeners:
+   7.1 Event Handler Properties
+       7.1.1 Objects (say buttons) that can fire events have properties whose name is "on"+name of event
+             For example buttons have "onClick" property and simply a function handler can be assigned
+             to it.
+       7.1.2 Drawback of this is that multiple event handlers cannot be attached to single object.
+   7.2 Inline Event Handlers
+       7.2.1 Earliest method of registering event handlers
+       Example: <button onclick="alert('Hello, this is my old-fashioned event handler!');">
+                  Press me
+                </button>
+       7.2.2 This is a bug prone way of doing things and not scalable as well thus should not be
+             preferred. Also for security measure inline js is discouraged.
+
+Event Objects
+1. Special objects automatically passed down to event handlers to give more context about the event
+   that just occurred. Allows accessing more information about the event and actually manipulate some things.
+2. event: the object passed on the handler function argument.
+3. event.target: the element that triggered the event.
+4. Prevention of Default Behaviour:
+   4.1 The natural and by default behaviour of event.
+   4.2 Best example is of form submission , instead of directly submitting the form with
+       input details to server for processing , some checks need to be performed like validity
+       of inputs , their types etc for which the default behaviour needs to be prevented.
+   4.3 event.preventDefault() method which is available with event object allows us to prevent
+       the default behaviour of the event.
+
+Event Bubbling
+1. Behaviour in DOM event model where an event starts from most specific element (target) and
+   then bubbles up through its ancestors in DOM tree. This is a by default behaviour in DOM event model.
+2. This event bubbling behaviour can be both useful and cause problems as well.
+3. Event bubbling simply means that when an event is triggered then right from the target element
+   to all ancestors in hierarchy get a chance to react to that event , after the child of the given node
+   is done reacting.
+4. To stop event bubbling, stopPropagation() is used. This method is available on event object.
+
+Event Capture
+1. Event capturing is a propagation method where events fire from the outermost element inward to the target,
+   the reverse of bubbling. It allows parent elements to handle events before their children do.
+2. By default, event capture is disabled. To enable is third argument inside "addEventListener()" needs to be
+   true.
+3.  element.addEventListener('click', handler, true);  // Capture phase
+    element.addEventListener('click', handler, false); // Bubbling phase (default)
+4. event.stopPropagation() stops event from continuing to propagate any further in both
+   direction , thus restricts both event bubbling and event capturing.
+
+Event delegation
+1. The idea of adding single listener to parent, instead of adding many to child elements
+   and using bubbling up to handler events as they rise up is from children is called
+   event delegation.
+2. Introduces efficiency, reduces memory consumption and works dynamically, that addition of
+   new child elements makes no issues.
+
+Target v|s CurrentTarget
+1. event.target: The original element where the event occurred (clicked, hovered, etc.)
+2. event.currentTarget: The original element where the event occurred (clicked, hovered, etc.)
+
+Custom Events:
+1. User Defined events which can be created , dispatched and then event listeners can be attached to them.
+2. Enables  modularity in components and decoupling.
+3. Also allows sending custom data as well which is not supported by built in events.
+4  Dispatch- means to manually trigger an event on an element.
+5. CustomEvent() constructor creates new CustomEvent object and then it can be manually triggered
+   using element.dispatchEvent().
+
+NOTE: Some Points
+1. event.stopImmediatePropagation(): stops event from:
+   1.1 Bubbling up (like stopPropagation())
+   1.2 AND prevents any other listeners on the same element from running.
+2. event object has many options:
+   event.type,event.timeStamp,event.defaultPrevented,event.detail (try them)
+3. AbortController: Built in js Object that lets you cancel operations like event listeners, fetch() requests.
+4. Example usage with event listeners: allows automatic removal of event listeners
+   abort signal automatically detaches all event listeners thus making them of no use if no onwards
+   any new event is triggered.
+
+   const controller = new AbortController();
+   element1.addEventListener("click", handler1, { signal: controller.signal });
+   element2.addEventListener("click", handler2, { signal: controller.signal });
+   // This will remove both listeners
+   controller.abort();
+5. Event vs CustomEvent
+   5.1 Standard events vs user defined events constructor
+   5.2 normal events since cannot carry custom data thus their object does nto have
+       .detail property which is available on CustomEventObjects.
+

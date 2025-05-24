@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="para" style="background: blue;color: white">Hello world</p>
+
+</body>
+<script>
+  const para=document.getElementById("para")
+  para.addEventListener("mouseover",function (){
+    para.style.backgroundColor="teal"
+  })
+  para.addEventListener("mouseout",function (){
+    para.style.backgroundColor="blue"
+  })
+</script>
+</html>

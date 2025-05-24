@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="addItem">Add Item</button>
+<ul id="dynamicList">
+  <li>Item 1</li>
+</ul>
+
+<script>
+  const list = document.getElementById('dynamicList');
+  const button = document.getElementById('addItem');
+  let counter = 2;
+
+  button.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.textContent = 'Item ' + counter++;
+    list.appendChild(li);
+  });
+
+  list.addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      console.log('You clicked:', event.target.textContent);
+    }
+  });
+</script>
+
+</body>
+</html>

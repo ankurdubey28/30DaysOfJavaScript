@@ -1,0 +1,46 @@
+When a function is called following things happen in JS:
+Execution Context Created
+    New frame pushed to Call Stack
+    Contains:
+        Local vars & parameters
+        Outer lexical environment
+        this binding
+Arguments Assigned
+    Params matched
+    arguments object created (non-arrow only)
+this Resolved
+    Depends on how function is called:
+        obj.method() → this = obj
+        func() → this = undefined (strict) / window
+        func.call(obj) → this = obj
+        Arrow functions → inherit this from where defined
+Closures Linked
+    Function retains access to outer variables
+    Scope chain formed at definition, not call
+Function Runs
+    Code executes
+    May return a value
+Context Popped
+ Execution context removed from Call Stack
+
+
+
+setInterval- this method repeatedly calls a function or executes a code snippet
+             with fixed time interval delay between each call.
+             return a unique identifier for the timer created using which
+             clearInterval() method can kill the timer.
+
+1. As seen Earlier "this" problem exists whenever a callback is passed
+2. to setTimeout or setInterval because setInterval and setTimeout run in separate
+3. execution context other than function from which it was called.
+4. inside these methods this refers to global object (non strict mode).
+5. Arrow functions are used to solve "this" issue.
+
+
+setTimeout- this method sets a timer which executes a function once timer expires.
+            return a unique identifier for the timer created using which
+            clearTimeout() method can kill the timer.
+
+
+NOTE:
+1. Both setTimeout and setInterval are asynchronous functions

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label for="Name">Enter Your Name:</label>
+<input type="text" name="Name" id="Name" placeholder="Your Name here"><br>
+<div id="output"></div>
+
+<script>
+  const name= document.getElementById("Name");
+  name.addEventListener("keyup",function (e){
+    const output= document.getElementById("output");
+    output.innerHTML=`You Pressed ${e.key}`
+  })
+</script>
+</body>
+</html>

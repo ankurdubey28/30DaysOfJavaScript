@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="mySelect"></label><select id="mySelect">
+    <option value="">Select an option</option>
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="cherry">Cherry</option>
+</select>
+
+<p id="selectedValue">You selected: </p>
+
+<script>
+    const select = document.getElementById('mySelect');
+    const output = document.getElementById('selectedValue');
+
+    select.addEventListener('change', function() {
+        output.textContent = 'You selected: ' + select.value;
+    });
+</script>
+</body>
+</html>

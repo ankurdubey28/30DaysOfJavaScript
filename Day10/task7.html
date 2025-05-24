@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form">
+    <label for="username">Enter Username</label>
+    <input type="text" name="username" id="username" placeholder="Enter Username">
+    <br></br>
+    <label for="password">Enter Password</label>
+    <input type="password" name="password" id="password" placeholder="Enter Password">
+    <br></br>
+    <button type="submit">Click Here</button>
+</form>
+<script>
+    const form=document.getElementById("form")
+
+    form.addEventListener("submit",function (e){
+        e.preventDefault();
+        const formData=new FormData(form)
+        const data={}
+        for(let [key,value] of formData.entries()){
+            data[key]=value
+        }
+        console.log(data)
+    })
+</script>
+</body>
+</html>
