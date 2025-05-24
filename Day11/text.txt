@@ -36,6 +36,10 @@ Promises:
    by an asynchronous function, which represents the current state of the operation. At the time the promise is 
    returned to the caller, the operation often isn't finished, but the promise object provides methods to handle 
    the eventual success or failure of the operation.
+2. Then() and catch() methods are available on the promise object to which takes in callback 
+   which would be called back depending on resolving of promise or rejection of promis e.
+3. Promise Object can be in only on of these states: pending,fulfilled,rejected.
+4. Promise Object is immutable, and this obejct is resolved or rejected only once.
 
 
 
