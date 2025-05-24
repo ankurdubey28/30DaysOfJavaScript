@@ -3,16 +3,14 @@ Asynchronous JS:
    able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that 
    task has finished, your program is presented with the result.
 
-example synchronous code:    const name="ankur";
+   example synchronous code:    const name="ankur";
                              const greeting=`hello my name is ${name}!`;
                              console.log(greeting)
 2. Problem with Synchronous Programming: since JS is single threaded, long running synchronous piece of
    code blocks the thread, thus while a long running synchronous code is in exectution during that time 
    no other thing can be done.
-
 3. Asynchronous programming comes as solution to above stated issue, with help of various mechanisms
    discussed ahead.
-
 
 Callbacks:
 1. callback is a function which is passed to other function with intention of being called later on.
@@ -42,7 +40,6 @@ Promises:
 4. Promise Object is immutable, and this obejct is resolved or rejected only once.
 
 
-
 Async Await:
 1. async is a keyword in js which makes a normal function as asynchronous function meaning such 
    function can only return a promise strictly . In case of non promise objects being returned by a
@@ -50,22 +47,62 @@ Async Await:
    promise object.
 2. await keyword resolves a promise and thus can only be written in front a promise or promise 
    returning function.
-3. what await keyword does can also be done by attaching .then() handlers to a promise, then 
-   what does await do extra? await kyeword forces js engine to stop the exectution of async 
-   function untill promise is resolved/rejected only after which next lines of code are actually 
-   executed. This is not true for .then() syntax.
+3. which in simply means that whenever a await is encoutered by js engine, the function is popped out of 
+   call stack and only loaded back into callstack when the promise which was awaited got resolved/rejected.
+4. await keyword can only be called inside a async function only.
+5. async await is actually a syntactic sugar which means under the hood it does promise evaluation using .then()
+   and .catch() only but this was of using async await allows handling asynchronous piece of code just like synchronous
+   piece of code from developer point of view.
+5. For example async/await usage allows using try/catch to do error handling on asynchronous piece of code.
+   Execute this following example.
+const p1=new Promise((resolve)=>{
+       setTimeout(()=>{
+              resolve("Promise 1 resolved")
+       },10000)
+})
+const p2=new Promise((resolve)=>{
+       setTimeout(()=>{
+              resolve("Promise 2 resolved")
+       },5000)
+})
+async function func(){
+       console.log("Hello world!")
+       const promise1=await p1;
+       console.log(promise1)
+       const promise2=await p2;
+       console.log(promise2)
+}
+func()
 
-
-
-
-
+Event Loop Mechanism:
+1. The Call Stack is a data structure that keeps track of all function calls currently being executed.
+   It works on the Last In First Out (LIFO) principle.
+2. Web APIs are provided by the environment (browser or Node.js) and run independently of the JS engine thread.
+   For example, when setTimeout() is called, the timer runs in the Web API environment, not on the JS call stack.
+3. Once an asynchronous operation completes (like a timer finishes or a fetch request resolves), its callback function is placed in a queue waiting to be executed.
+   There are two important types of queues:
+         Callback Queue (Macrotask Queue) — holds tasks like setTimeout, setInterval, UI rendering, I/O callbacks.
+         Microtask Queue — holds tasks like resolved Promise callbacks (.then()/.catch()), MutationObserver callbacks, and queueMicrotask().
+4. The Event Loop is a process that continuously monitors the call stack and the queues.
+   If the call stack is empty, the event loop picks the first task from the microtask queue and pushes it onto the call stack.
+5. It continues to run all microtasks until the microtask queue is empty.
+   Only after that, it picks the next task from the callback (macrotask) queue and pushes it onto the call stack.
+6. This mechanism ensures that microtasks always run before the next macrotask, giving Promises and other microtasks a higher priority.
+   After processing a macrotask and all subsequent microtasks, the browser may perform rendering updates (repaint/reflow).
+ 
 NOTE:
 1. JS engine itself is single threaded.
 2. But JS runtime environment includes mutlit threaded capabilites like
-   Web apis
+   Web apis (setTimeout(),DOM apis,fetch(),console,localstorage,location)
    Event Loop 
    Web Worker
    Thread pools (in nodejs with libuv,fs module uses these)
+3. Whenver JS code runs, a global execution context is set up and loaded into callstack.
+4. Global JS Object: It is the top-level object in JavaScript that provides access to global 
+   variables and functions. In browser (window) while in nodejs(global).
+5. From ES2020, globalThis is used to reference the global JS Object.
+6. All functions like setTimeout, console etc live within this global JS object and hence 
+   directly accessible to us wihtin code.
 
 
 
