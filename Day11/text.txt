@@ -43,6 +43,20 @@ Promises:
 
 
 
+Async Await:
+1. async is a keyword in js which makes a normal function as asynchronous function meaning such 
+   function can only return a promise strictly . In case of non promise objects being returned by a
+   async function, it is automatically wrapped inside a promise and hence the caller will recieve a 
+   promise object.
+2. await keyword resolves a promise and thus can only be written in front a promise or promise 
+   returning function.
+3. what await keyword does can also be done by attaching .then() handlers to a promise, then 
+   what does await do extra? await kyeword forces js engine to stop the exectution of async 
+   function untill promise is resolved/rejected only after which next lines of code are actually 
+   executed. This is not true for .then() syntax.
+
+
+
 
 
 NOTE:
