@@ -1,0 +1,20 @@
+JRE-Javascript Runtime Environment
+1. A platform needed to execute js code. It includes:
+2. JS engine
+3. web apis in browsers
+4. event loop
+5. call stack
+6. callback queue and microtask queue
+7. Just like NodeJs is a JS runtime environment capable of running JS code
+   outside browser, similarly v8 and spidermonkey are JS engine capable of
+   running js code within browser.
+8. Thing to note here is there are many utilities which have same name in both
+   browser based environments and Nodejs like setTimeout,fetch etc but only there
+   name are and job is same but their implementation varies environment to environment.
+9. JS is an interpreted language.
+
+JS-Javascript Engine
+1. Ecmascript- language standard for js language. Javascript,JScript and
+   actionScript are implementation of ecmascript.
+2. V8 engine is actually written in c++ and takes high level js code and
+   spits out machine code.

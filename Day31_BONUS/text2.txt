@@ -1,0 +1,40 @@
+Javascript tooling
+A. Bundlers
+1. Bundlers: webpack,parcel,vite
+2. The job of combining multiple js,css,assets(image) together into a single
+   optimized file is called bundling.
+3. Benefits:
+   3.1 improved performance.
+   3.2 reduced network traffic.
+   3.3 enable code modularization and lazy loading.
+   3.4 apply optimization and performance enhancements.
+
+4.Bundler anatomy:
+4.1 Entry points: obvious to name the point from where bundler starts begin
+                  analyzing and bundling code.
+4.2 Dependency Resolution: bundlers build a dependency graph to determine relations
+                           between different modules after analyzing all imports.
+4.3 Loaders: transformation module which enable bundlers to process different types of
+             files and apply transformation to the code like transpiling ts to js,
+             applying css pre processors etc.
+4.4 Plugins: extend the basic functionalities of a bundler by performing additional task
+             like providing custom configuration,generating html files, handling environment
+             variables etc during bundling process.
+4.5 output: this configuration determines how the bundled code is generated and where
+            is it saved and other related options.
+
+
+B. Transpiler
+1. Transpilers: babel,typescript,coffeescript
+2. Job is take code in one language and spit out equivalent code in other language.
+3. Transpilers are different than compilers in sense that compilers take high level
+   language as input and give machine code as output while transpilers input and output
+   languages are on same level of abstraction.
+4. Example would be babel which converts cone written in newer js version and spit out
+   code in older js versions or another example being typescript.
+
+5. Transpiler Anatomy:
+5.1 since transpiler is design wise similar to a compiler the steps followed
+    components are same as well.
+5.2 steps like parsing,generation of ast and then semantically verified ast, intermediate
+    code generation , code optimization (tac) and target code output are present here.

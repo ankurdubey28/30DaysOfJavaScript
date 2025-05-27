@@ -1,0 +1,36 @@
+Top Level Await
+1. Introduced in es2020.
+2. Allows a module to behave like an async function.
+3. A module that imports another module with top level await will wait
+   for the imported module to load before evaluating its body.
+4. example:
+
+
+   user.js
+
+   let config;
+   (async()=>{
+    const res=await fetch("dummy url");
+    config=await res.json();
+    })();
+    export {config}; // we have exported config even before the
+                        fetch call has completed and config actually
+                        holds a value.Any importing files see undefined
+                        for config.
+
+    user.js
+
+    const res=await fetch("dummy url");
+    const config=await res.json();
+    export {config};   // this module pauses at await and only finishes
+                          loading once the promise resolves hence importing
+                          files config variable to be populated.
+
+Dynamic Loading:
+1. Lets us load js modules at runtime, instead of top of the file.
+2. use cases would be lazy loading (react), conditional loading ,
+   dependency fallback etc.
+3. Dynamic loading is accomplished using await keyword and this type of
+   loading can be done anywhere in the file whenever required.
+4. example:
+        const module=await import("./utils.js") // uses top level await.
