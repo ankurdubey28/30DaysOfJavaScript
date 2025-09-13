@@ -52,7 +52,10 @@ expression short circuits and evaluates to undefined instead of throwing an erro
 B. Nullish coalescing operator:(??)
 The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
 Its main job can be understood as giving fallback value to the variable in case main value is
-null or undefined only. It is special case of Logical or operator (||).
+null or undefined only.
+
+Q. How is || operator different from ??.
+A. ?? is a special case of || operator in sense that both give fallback value , but || does this for falsy values on left hand side while ?? does this for only null and undefined on left hand side.
 
 C. Spread  operator:
 1. spread only works with iterable values like array and string.
