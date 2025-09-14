@@ -67,9 +67,15 @@ Event delegation
 2. Introduces efficiency, reduces memory consumption and works dynamically, that addition of
    new child elements makes no issues.
 
-Target v|s CurrentTarget
-1. event.target: The original element where the event occurred (clicked, hovered, etc.)
-2. event.currentTarget: The original element where the event occurred (clicked, hovered, etc.)
+Target vs CurrentTarget
+
+* .event.target
+The element where the event actually occurred (clicked, hovered, etc.).
+Can be a child element if the listener is on a parent.
+
+*. event.currentTarget
+The element on which the event listener is currently executing.
+Always the element that has the listener attached, regardless of where the event originated.
 
 Custom Events:
 1. User Defined events which can be created , dispatched and then event listeners can be attached to them.
@@ -99,4 +105,5 @@ NOTE: Some Points
    5.1 Standard events vs user defined events constructor
    5.2 normal events since cannot carry custom data thus their object does nto have
        .detail property which is available on CustomEventObjects.
+
 
